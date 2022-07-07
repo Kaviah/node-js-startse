@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 const apiUrl = 'https://swapi.dev/api';
 // constante para o link da API
 
-async function getPeople(oage = 1) { // função assíncrona para pegar os personagens do filme 
+async function getPeople(page = 1) { // função assíncrona para pegar os personagens do filme 
     // StarWars da API (request)
     const response = await fetch(`${apiUrl}/people?page=${page}`);
     const people = await response.json();
