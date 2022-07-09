@@ -28,3 +28,14 @@ app.get ('/users/:userId', (request, response) => {
     })
     return response.send(user);
 });
+
+// criando novo usuário no objeto users
+
+app.post('/users', (request, response) => {
+    
+    const newUser = request.body; // constante para guardar novo usuário
+
+    users.push (newUser); // inserindo novo usuário na lista
+
+    return response.status(201).send(newUser); // retorna novo usuário com status (201)
+});
