@@ -1,4 +1,5 @@
 import express, { response } from 'express';
+import { StatusCodes } from 'http-status-codes';
 
 const app = express();
 const PORT = 3000;
@@ -9,7 +10,7 @@ let users = [
 
 app.use(express.json()); // define que as requests serão enviadas no formato json
 
-app.listen(PORT, () => {
+app.listen(PORT, '127.0.0.1',() => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
 
@@ -37,5 +38,5 @@ app.post('/users', (request, response) => {
 
     users.push (newUser); // inserindo novo usuário na lista
 
-    return response.status(201).send(newUser); // retorna novo usuário com status (201)
+    return response.status(StatusCodes.CREATED).send(newUser); // retorna novo usuário com status (201)
 });
