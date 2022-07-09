@@ -7,6 +7,8 @@ let users = [
     { id: 2, name: 'Gabriel', age: 27 },
 ];
 
+app.use(express.json()); // define que as requests serão enviadas no formato json
+
 app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
