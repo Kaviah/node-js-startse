@@ -19,9 +19,10 @@ app.get('/users', (request, response) => {
     return response.send(users);
 });
 
-// app.get ('/users/:userId', (request, response) => {
-//     const userId = request.params.userId;
-//     const user = users.find(user => {
-//         return(user.id === Number(userId))
-//     })
-// });
+app.get ('/users/:userId', (request, response) => {
+    const userId = request.params.userId;
+    const user = users.find(user => {
+        return(user.id === Number(userId));
+    })
+    return response.send(user);
+});
