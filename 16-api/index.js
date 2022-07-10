@@ -2,7 +2,7 @@ import express, { response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 let users = [
     { id: 1, name:'Rafael', age: 31 },
     { id: 2, name: 'Gabriel', age: 27 },
