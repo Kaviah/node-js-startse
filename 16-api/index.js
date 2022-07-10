@@ -55,3 +55,12 @@ app.put('/users/:userId', (request, response) => {
     });
     return response.send(updatedUser);
 });
+
+// excluir usuário com DELETE
+
+app.delete('/users/:userId', (request, response) => {
+    const userId = request.params.userId;
+    users.filter((user) => user.id !== Number(userId));
+
+    return response.status(StatusCodes.NO_CONTENT).send();
+});
