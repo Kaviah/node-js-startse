@@ -40,3 +40,18 @@ app.post('/users', (request, response) => {
 
     return response.status(StatusCodes.CREATED).send(newUser); // retorna novo usuário com status (201)
 });
+
+// atualizar dados de usuário com PUT
+
+app.put('/users/:userId', (request, response) => {
+    const userId = request.params.userId;
+    const updatedUser = request.body;
+
+    users = users.map( user => {
+        if(userId === user.id) {
+            return updatedUser;
+        }
+        return user;
+    });
+    return response.send(updatedUser);
+});
